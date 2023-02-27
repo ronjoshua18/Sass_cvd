@@ -8,6 +8,10 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -232,6 +236,15 @@ body {
   margin-left: 20rem;
 }
 
+.header {
+  position: fixed;
+  width: 100%;
+}
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .header .branding {
   display: flex;
   align-items: center;
@@ -245,5 +258,207 @@ body {
   font-size: 2.5rem;
 }
 .header .branding h3 span {
-  color: #ffa700 -primary;
+  color: #ffa700;
+}
+.header_nav {
+  position: absolute;
+  background: #ffffff;
+  top: 8rem;
+  right: -100rem;
+  width: 100%;
+  height: 100vh;
+  transition: 0.5s ease;
+}
+.header_nav ul {
+  display: block;
+  text-align: center;
+}
+.header_nav ul li {
+  margin-left: 0;
+  border-bottom: 1px solid #2b2b2b;
+  padding: 3rem 0;
+}
+.header_nav ul li:hover {
+  background-color: #ffa700;
+}
+.header_nav ul li a {
+  color: #2b2b2b;
+  font-size: 3rem;
+}
+.header_nav.open {
+  right: 0;
+}
+.header .toggle__menu {
+  display: block;
+}
+.header .toggle__menu span {
+  width: 3.5rem;
+  height: 0.4rem;
+  right: 0;
+  background-color: #ffa700;
+  display: block;
+  margin-bottom: 0.5rem;
+  border-radius: 5rem;
+  transition: 0.5s ease;
+}
+.header .toggle__menu.open span:first-child {
+  transform: translate(0, 13px) rotate(45deg);
+  transition: 0.5s ease;
+}
+.header .toggle__menu.open span:nth-child(2) {
+  opacity: 0;
+  transition: 0.5s ease;
+}
+.header .toggle__menu.open span:last-child {
+  transform: translate(0, -5px) rotate(-225deg);
+  transition: 0.5s ease;
+}
+@media screen and (min-width: 970px) {
+  .header .toggle__menu {
+    display: none;
+  }
+  .header_nav {
+    position: unset;
+    width: unset;
+    height: unset;
+    background: none;
+  }
+  .header_nav ul {
+    display: flex;
+  }
+  .header_nav ul li {
+    margin-left: 2rem;
+  }
+  .header_nav ul li a {
+    color: #ffffff;
+  }
+  .header_nav ul li:hover {
+    background: none;
+  }
+  .header_nav ul li:hover a {
+    color: #ffa700;
+  }
+}
+
+.banner {
+  background: #ffffff;
+  padding: 11rem 0 5rem 0;
+}
+.banner__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  text-align: center;
+  margin: 0 5rem;
+}
+.banner__text {
+  color: #2b2b2b;
+  font-size: 3rem;
+  font-weight: 500;
+}
+.banner__text h1 {
+  color: #ffa700;
+  font-size: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+.banner__text p {
+  font-size: 2rem;
+  padding-bottom: 3rem;
+  text-align: justify;
+}
+.banner__text a {
+  color: #ffffff;
+  font-size: 2rem;
+  border: 1px solid transparent !important;
+  text-transform: uppercase;
+  border-radius: 5rem;
+  background: #ffa700;
+  padding: 1rem;
+}
+.banner__text a:hover {
+  background: #2b2b2b;
+  border: 1px solid #ffa700;
+  color: #ffa700;
+}
+.banner img {
+  width: 100%;
+}
+@media screen and (min-width: 970px) {
+  .banner .banner {
+    padding: 7rem 0 0 0;
+  }
+  .banner .banner__wrapper {
+    flex-direction: row;
+    margin: 7rem 5rem 0 5rem;
+    justify-content: space-between;
+  }
+  .banner .banner__wrapper img {
+    width: 70rem;
+  }
+  .banner .banner__text {
+    text-align: left;
+  }
+  .banner .banner__text h1 {
+    font-size: 11rem;
+    max-width: 52rem;
+    line-height: 0.8;
+  }
+  .banner .banner__text p {
+    text-align: justify;
+    max-width: 40rem;
+  }
+}
+
+.hm-services {
+  background: #2b2b2b;
+}
+.hm-services__wrapper {
+  margin: 5rem 0;
+  padding: 0 3rem;
+}
+.hm-services__item {
+  text-align: center;
+  margin: 8rem 0;
+}
+.hm-services__item i {
+  color: #ffa700;
+  font-size: 5rem;
+}
+.hm-services__item h4 {
+  color: #ffa700;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+.hm-services__item p {
+  color: #ffffff;
+  text-align: justify;
+  margin: 3rem 0;
+}
+.hm-services__item a {
+  color: #ffffff;
+  font-size: 2rem;
+  border: 1px solid transparent !important;
+  border-radius: 5rem;
+  background: #ffa700;
+  padding: 2rem 3rem;
+}
+.hm-services__item a:hover {
+  background: #ffffff;
+  border: 1px solid #ffa700;
+  color: #ffa700;
+}
+@media screen and (min-width: 970px) {
+  .hm-services .hm-services__wrapper {
+    margin: 0 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10rem;
+  }
+  .hm-services .hm-services__wrapper p {
+    margin-bottom: 7rem;
+  }
+  .hm-services .hm-services__wrapper i {
+    margin-bottom: 3rem;
+  }
 }/*# sourceMappingURL=main.css.map */

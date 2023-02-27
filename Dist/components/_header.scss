@@ -1,4 +1,11 @@
 .header{
+    position: fixed;
+    width: 100%;
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
     .branding{
         display: flex;
         align-items: center;
@@ -10,8 +17,114 @@
             margin-left: 1rem;
             font-size: 2.5rem;
             span{
-                color: $clr-primary;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          -primary;
+                color: $clr-primary;
             }
         }
     }
+
+    //header nav
+    &_nav{
+        position: absolute;
+        background: $clr-light;
+        top: 8rem;
+        right: -100rem;
+        width: 100%;
+        height: 100vh;
+        transition: .5s ease;
+        ul{
+            display: block;
+            text-align: center;
+            li{
+                margin-left: 0;
+                border-bottom: 1px solid $clr-dark;
+                padding: 3rem 0;
+                &:hover{
+                    background-color: $clr-primary;
+                    
+                }
+                a{
+                    color: $clr-dark;
+                    font-size: 3rem;
+            }
+            
+            
+        }
+
+    }
+    &.open{
+        right: 0;
+    }
+}
+
+
+
+
+
+       .toggle__menu{
+        display: block;
+        span{
+        width: 3.5rem;
+        height: .4rem;
+        right: 0;
+        background-color: $clr-primary;
+        display: block;
+        margin-bottom: .5rem;
+        border-radius: 5rem;
+        transition: .5s ease;
+        }
+
+        
+       }
+
+       .toggle__menu.open {   
+        span{
+            &:first-child{
+                transform: translate(0,13px) rotate(45deg);
+                transition: .5s ease;
+            }
+            &:nth-child(2){
+                opacity: 0;
+                transition: .5s ease;
+            }
+    
+           &:last-child{
+            transform: translate(0, -5px) rotate(-225deg);
+            transition: .5s ease;
+        }
+        }
+           
+        
+       
+
+       }
+
+       @include mediaQuery($break-lg){
+        .toggle__menu{
+            display: none;
+        }
+        &_nav{
+            position: unset;
+            width: unset;
+            height: unset;
+            background: none;
+
+            ul{
+                display: flex;
+                li{
+                    margin-left: 2rem;
+                    a{
+                        color: $clr-light;
+                    }
+                    &:hover{
+                        background: none;
+                        a{
+                            color: $clr-primary;
+                        }
+                        
+                    }
+                }
+            }
+        }
+       }
+       
 }
